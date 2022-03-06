@@ -1,0 +1,251 @@
+html{
+    overflow-x: hidden;
+    height: 100vh;
+
+}
+
+@font-face {
+    font-family: Nato;
+    src: url(/Font/Lato-Regular.ttf);
+
+}
+
+@font-face{
+    font-family: NatoLight;
+    src: url(/Font/Lato-Light.ttf);
+}
+
+body {
+    display: grid;
+    font-family: Nato;
+    grid-template-columns: repeat(8, 12.5fr);
+    grid-template-rows: 5fr auto 60fr 5fr;
+    margin: 0 auto;
+    height: 100%;
+
+    perspective: 1000px;
+
+    background:
+        radial-gradient(circle farthest-corner at top left, #FF6138 0%, #ff603800 80%),
+        radial-gradient(circle farthest-side at right, #FFFF9D 0%, #ffff9d00 30%),
+        radial-gradient(circle farthest-corner at bottom left, #79BD8F 0%, #79bd8e00 50%),
+        radial-gradient(circle farthest-corner at top right, #00A388 0%, #00a38800 80%),
+        radial-gradient(circle farthest-side at bottom, #BEEB9F 0%, #BEEB9F00 30%);
+    background-size:100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+
+    animation: animBackground 19s ease infinite;
+}
+
+#grid{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to left, rgb(255, 255, 255) 1px, transparent 1px),
+        linear-gradient(to top, rgb(255, 255, 255) 1px, transparent 1px);
+    background-size: 50px 50px;
+    
+}
+
+@keyframes animBackground {
+    0%{background-position:0% 70%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 70%}
+}
+
+/* ---------------------------------- HEADER --------------------------------------- */
+
+
+header{
+    display: flex;
+    position: relative;
+    transform-style: preserve-3d;
+    justify-content: center;
+    grid-area: 1 / 1 / 1 /9;
+    margin-bottom: 20px;
+    background-color: rgba(240, 248, 255, 0.822);
+}
+
+ul.nav_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+}
+
+li{
+    list-style: none;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    bottom: 0;
+    background-color: rgba(202, 207, 212, 0.822) ;
+    transform-origin: bottom center;
+    transform: rotateX(90deg);
+    
+}
+
+.bottom .nav_menu li{
+    width: 220px;
+    pointer-events: none;
+}
+
+ul.nav_menu li a{
+    display: block;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+
+}
+header li,
+header a{
+    transition: all ease-in-out .3s;
+}
+header li:hover #num1{
+    background-color: #00A388 ;
+}
+header li:hover #num2{
+    background-color: #BEEB9F ;
+}
+header li:hover #num3{
+    background-color: #FF6138 ;
+}
+
+header li:hover a{
+    color: white;
+}
+
+
+/* ---------------------------------- Accueil --------------------------------------- */
+
+
+.accueil_intro{
+    grid-area: 2 / 3 / 2 / 7  ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0;
+    padding: 0 5%;
+}
+
+h1.title{
+    font-size: 4em;
+    margin: 5px;
+}
+
+.info{
+    font-family: NatoLight;
+}
+
+/* ---------------------------------- Accueil/Galerie --------------------------------------- */
+
+.galerie{
+    position: relative;
+    display: flex;
+    align-items: center;
+    grid-area: 3 / 3 / 3 / 7;
+
+}
+
+.vp_Galerie{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 100%;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    clip-path: polygon(0 0, 20% 0, 20% 100%, 0 100%);
+
+}
+
+.contenu_Galerie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+}
+
+.contenu_Galerie model-viewer{
+    width: 100%;
+    height: 100%;
+}
+
+#next,
+#prev {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 70px;
+    height: 100px;
+    z-index: 100;
+    padding: 10px;
+}
+svg{
+    fill: #00A388;
+    width: 100%;
+}
+
+#next{
+    right: 0;
+}
+
+#prev{
+    left: 0;
+    transform: scaleX(-1);
+}
+
+.bloc{
+    z-index: 10;
+    border-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.822);
+}
+div.shapes model-viewer{
+    position: absolute;
+    transform: rotateZ(90deg);
+}
+
+span#progressBar{
+    position: absolute;
+    transition: all ease-in-out .5s;
+    bottom: 10px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #00A388;
+}
+
+/* ---------------------------------- À Propos --------------------------------------- */
+
+/* .apropos_intro{
+    grid-area: 3 / 3 / 3 / 7;
+
+} */
+
+/* ---------------------------------- Exploration --------------------------------------- */
+
+.galerie_explor{
+    grid-area: 3/2/3/8;
+}
+
+/* ---------------------------------- Footer --------------------------------------- */
+
+footer{
+    grid-area: 4/1/4/9;
+}
