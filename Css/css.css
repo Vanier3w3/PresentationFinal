@@ -114,7 +114,7 @@ ul.nav_menu li a{
 }
 header li,
 header a{
-    transition: all ease-in-out .3s;
+    /* transition: all ease-in-out .3s; */
 }
 header li:hover #num1{
     background-color: #00A388 ;
@@ -134,7 +134,8 @@ header li:hover a{
 /* ---------------------------------- Accueil --------------------------------------- */
 
 
-.accueil_intro{
+.accueil_intro,
+.explo_intro{
     grid-area: 2 / 3 / 2 / 7  ;
     display: flex;
     flex-direction: column;
@@ -180,7 +181,7 @@ h1.title{
     justify-content: center;
     align-items: center;
     width: 100%;
-    transition: all ease-in-out 0.5s;
+    /* transition: all ease-in-out 0.3s; */
 }
 
 .contenu_Galerie model-viewer{
@@ -213,6 +214,7 @@ svg{
 }
 
 .bloc{
+    position: relative;
     z-index: 10;
     border-radius: 10px;
     background-color: rgba(240, 248, 255, 0.822);
@@ -239,6 +241,19 @@ span#progressBar{
 } */
 
 /* ---------------------------------- Exploration --------------------------------------- */
+#sous_titre{
+}
+
+.test{
+    width: 50px;
+    height: 50px;
+    background-color: turquoise;
+    margin: 10px;;
+}
+
+.explo_intro .title{
+    box-shadow: white;
+}
 
 .galerie_explor{
     grid-area: 3/2/3/8;
