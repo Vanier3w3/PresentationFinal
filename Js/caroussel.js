@@ -1,9 +1,11 @@
 let caroussel = document.querySelectorAll('.contenu_Galerie')
+let vwp = document.querySelector('.vp_Galerie')
 let progress = document.getElementById('progressBar')
 let left = document.getElementById('prev')
 let right = document.getElementById('next')
 
-progress.style.width = "20%"
+vwp.style.width = Array.from(caroussel).length * 100 + "%"
+progress.style.width = 100 / Array.from(caroussel).length + "%"
 for(const elmCaroussel of caroussel){
     let index = 0;
     let maxIndex = caroussel.length-1;

@@ -31,9 +31,9 @@ body {
         radial-gradient(circle farthest-corner at bottom left, #79BD8F 0%, #79bd8e00 50%),
         radial-gradient(circle farthest-corner at top right, #00A388 0%, #00a38800 80%),
         radial-gradient(circle farthest-side at bottom, #BEEB9F 0%, #BEEB9F00 30%);
-    background-size:100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-size: 150%;
 
-    animation: animBackground 19s ease infinite;
+    animation: animBackground 10s ease infinite;
 }
 
 #grid{
@@ -114,7 +114,7 @@ ul.nav_menu li a{
 }
 header li,
 header a{
-    /* transition: all ease-in-out .3s; */
+    transition: all ease-in-out .3s;
 }
 header li:hover #num1{
     background-color: #00A388 ;
@@ -160,7 +160,7 @@ h1.title{
     display: flex;
     align-items: center;
     grid-area: 3 / 3 / 3 / 7;
-
+    overflow: hidden;
 }
 
 .vp_Galerie{
@@ -181,7 +181,7 @@ h1.title{
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* transition: all ease-in-out 0.3s; */
+    transition: all ease-in-out 0.3s;
 }
 
 .contenu_Galerie model-viewer{
@@ -240,27 +240,100 @@ span#progressBar{
 
 } */
 
-/* ---------------------------------- Exploration --------------------------------------- */
-#sous_titre{
-}
-
-.test{
-    width: 50px;
-    height: 50px;
-    background-color: turquoise;
-    margin: 10px;;
-}
-
-.explo_intro .title{
-    box-shadow: white;
-}
-
-.galerie_explor{
-    grid-area: 3/2/3/8;
-}
-
 /* ---------------------------------- Footer --------------------------------------- */
 
 footer{
     grid-area: 4/1/4/9;
+}
+/* ---------------------------------- Exploration --------------------------------------- */
+
+.galerie_explor{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    position: relative;
+    grid-area: 3/2/4/8;
+    padding: 5px 15px;
+}
+
+.cont_ST{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    padding-left: 1%;
+    clip-path:polygon(0 0, 25% 0, 25% 100%, 0% 100%);
+    transition: clip-path ease-in-out 1s;
+    height: auto;
+    cursor: pointer;
+
+}
+
+.cont_ST:hover{
+    clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.cont_ST ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.8em;
+    width: 70%;
+}
+
+.cont_ST ul li{
+    padding: 5px;
+    text-decoration: underline;
+    transition: all .5s;
+}
+
+.cont_ST ul li:hover{
+    color: #00A388;
+}
+
+#sous_titre{
+    font-size: 2.5em;
+    text-align: center;
+    width: 25%;
+}
+
+.explo_VP{
+    flex: 20 0 auto;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: rotate(0deg);
+    overflow: hidden;
+}
+
+.explo_VP ul {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.explo_VP ul li{
+    display: grid;
+    grid-template: repeat(2, 50fr) / repeat(3, 33fr);
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 10px;
+    background:
+        radial-gradient(circle farthest-corner at top left, #d8e6cf 0%, #ceddc400 80%),
+        radial-gradient(circle farthest-side at right, #cee4e0 0%, #84929000 30%),
+        radial-gradient(circle farthest-corner at bottom left, #d9e4dc 0%, rgba(205, 218, 209, 0) 50%),
+        radial-gradient(circle farthest-corner at top right, #f0e9e7 0%, #fcf7f600 80%),
+        radial-gradient(circle farthest-side at bottom, #f5f5ef 0%, #f3f3ec00 30%);
+}
+
+iframe{
+    width: 95%;
+    height: 95%;
 }
