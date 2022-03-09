@@ -235,10 +235,28 @@ span#progressBar{
 
 /* ---------------------------------- À Propos --------------------------------------- */
 
-/* .apropos_intro{
+.apropos_intro{
     grid-area: 3 / 3 / 3 / 7;
+    padding: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2% 0;
+    overflow-y: auto;
+    height: auto;
+}
 
-} */
+.apropos_intro .title{
+    text-align: center;
+}
+
+.apropos_intro svg{
+    width: 70%;
+    filter:invert();
+}
+
 
 /* ---------------------------------- Footer --------------------------------------- */
 
@@ -333,7 +351,17 @@ footer{
         radial-gradient(circle farthest-side at bottom, #f5f5ef 0%, #f3f3ec00 30%);
 }
 
+.explo_VP ul li div{
+    display: flex;
+    justify-content: center;
+}
+
 iframe{
     width: 95%;
     height: 95%;
+}
+
+ul li div iframe{
+    width: 100%;
+    height: 100%;
 }
