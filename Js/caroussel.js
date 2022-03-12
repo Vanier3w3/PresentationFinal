@@ -20,7 +20,6 @@ for(const elmCaroussel of caroussel){
             progress.style.width = '100%'
             index = maxIndex;
         }
-        console.log(maxIndex)
     })
     
     right.addEventListener('click', function(){
@@ -34,7 +33,5 @@ for(const elmCaroussel of caroussel){
             progress.style.width = 100/caroussel.length + "%"
             index = 0
         }
-        console.log(index)
-
     })
 }
